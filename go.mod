@@ -1,4 +1,4 @@
-module github.com/allenakinkunle/go-tasks
+module github.com/allenakinkunle/go-tasks/v1
 
 go 1.19
 
