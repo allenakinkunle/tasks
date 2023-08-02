@@ -16,3 +16,5 @@ coverage.html
 
 # vim swp files
 *.swp
+
+.idea
