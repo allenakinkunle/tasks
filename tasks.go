@@ -351,6 +351,9 @@ func (schd *Scheduler) scheduleTask(t *Task) {
 		}
 
 		// Run the task for the first time after StartAfter is complete, then run on the interval
+		t.safeOps(func() {
+			t.timer = time.AfterFunc(time.Until(time.Now()), func() { schd.execTask(t) })
+		})
 		schd.execTask(t)
 
 		// Schedule task
