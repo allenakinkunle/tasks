@@ -354,7 +354,6 @@ func (schd *Scheduler) scheduleTask(t *Task) {
 		t.safeOps(func() {
 			t.timer = time.AfterFunc(time.Until(time.Now()), func() { schd.execTask(t) })
 		})
-		schd.execTask(t)
 
 		// Schedule task
 		t.safeOps(func() {
